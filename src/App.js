@@ -11,6 +11,8 @@ function App() {
   const [berryFlavour, setBerryFlavour] = useState("");
   const [pokemonList, setPokemonList] = useState("");
 
+  document.title = "Pokemoon & Berryland";
+
   useEffect(() => {
     axios
       .get("https://pokeapi.co/api/v2/berry/1")
