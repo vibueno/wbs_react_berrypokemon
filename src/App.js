@@ -3,6 +3,7 @@ import axios from "axios";
 import "./App.css";
 import Card from "./components/Card";
 import BerryForm from "./components/BerryForm";
+import PokemonList from "./components/PokemonList";
 
 function App() {
   const [berry, setBerry] = useState("");
@@ -71,18 +72,11 @@ function App() {
         <Card berryInfo={berryFirmness}></Card>
         <Card berryInfo={berryFlavour}></Card>
       </div>
+
       <BerryForm></BerryForm>
 
       <h2>Pokemon buddies</h2>
-      <ul>
-        {Object.keys(pokemonList).map((key, index) => {
-          return (
-            <li key={key} className="pokemon-list">
-              {pokemonList[index].name}
-            </li>
-          );
-        })}
-      </ul>
+      <PokemonList pokemonList={pokemonList}></PokemonList>
     </>
   );
 }
