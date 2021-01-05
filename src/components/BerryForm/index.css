@@ -1,0 +1,20 @@
+form {
+  display: flex;
+  justify-content: center;
+  margin: 0 0 10px 0;
+}
+
+button {
+  background-color: #ffe3d8;
+  border: 1px solid #bbb;
+  border-radius: 10px;
+  margin-left: 5px;
+  text-transform: uppercase;
+}
+
+.returned-berry {
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  display: flex;
+}
