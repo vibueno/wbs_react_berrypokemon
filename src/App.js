@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import "./App.css";
 import Card from "./components/Card";
@@ -7,10 +7,11 @@ function App() {
   const [berry, setBerry] = useState("");
   const [berryFirmness, setBerryFirmness] = useState("");
   const [berryFlavour, setBerryFlavour] = useState("");
-
   const [userBerry, setuserBerry] = useState("");
-
   const [pokemonList, setPokemonList] = useState("");
+
+  const userBerryForm = useRef(null);
+  const userBerryInput = useRef(null);
 
   useEffect(() => {
     axios
@@ -66,16 +67,17 @@ function App() {
   }, []);
 
   const submitHandler = (e) => {
-    const domUserBerry = document.getElementById("user-berry");
+    const userBerry = userBerryInput.current.value;
 
     axios
-      .get(`https://pokeapi.co/api/v2/berry/${domUserBerry.value}`)
+      .get(`https://pokeapi.co/api/v2/berry/${userBerry}`)
       .then((response) => {
         setuserBerry(response.data.name);
       })
       .catch((error) => {
         setuserBerry("no berry available with the specified id.");
       });
+    userBerryForm.current.reset();
 
     e.preventDefault();
   };
@@ -88,11 +90,13 @@ function App() {
         <Card berryInfo={berryFirmness}></Card>
         <Card berryInfo={berryFlavour}></Card>
       </div>
-      <form onSubmit={submitHandler}>
+      <form ref={userBerryForm} onSubmit={submitHandler}>
         <input
+          ref={userBerryInput}
           id="user-berry"
           type="text"
           placeholder="Enter a berry id..."
+          required
         ></input>
         <button type="submit">get berry!</button>
       </form>
