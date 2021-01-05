@@ -10,6 +10,8 @@ function App() {
 
   const [userBerry, setuserBerry] = useState("");
 
+  const [pokemonList, setPokemonList] = useState("");
+
   useEffect(() => {
     axios
       .get("https://pokeapi.co/api/v2/berry/1")
@@ -42,12 +44,21 @@ function App() {
     axios
       .get("https://pokeapi.co/api/v2/berry-flavor/1")
       .then((response) => {
-        const apiBerryFlavour = {
+        const apiResponseBerryFlavour = {
           category: "flavour",
           id: response.data.id,
           name: response.data.name,
         };
-        setBerryFlavour(apiBerryFlavour);
+        setBerryFlavour(apiResponseBerryFlavour);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
+    axios
+      .get(" https://pokeapi.co/api/v2/pokemon")
+      .then((response) => {
+        setPokemonList(response.data.results);
       })
       .catch((error) => {
         console.log(error);
@@ -71,7 +82,7 @@ function App() {
 
   return (
     <>
-      <h1>Welcome to Berryland!</h1>
+      <h1>Welcome to Pokemoon & Berryland!</h1>
       <div className="card-container">
         <Card berryInfo={berry}></Card>
         <Card berryInfo={berryFirmness}></Card>
@@ -83,11 +94,22 @@ function App() {
           type="text"
           placeholder="Enter a berry id..."
         ></input>
-        <button type="submit">get!</button>
+        <button type="submit">get berry!</button>
       </form>
       <div className="returned-berry">
-        <strong>Your berry:&nbsp;</strong> {userBerry}
+        <strong>{userBerry !== "" ? `Your berry: ${userBerry}` : ""}</strong>
       </div>
+
+      <h2>Pokemon buddies</h2>
+      <ul>
+        {Object.keys(pokemonList).map((key, index) => {
+          return (
+            <li key={key} className="pokemon-list">
+              {pokemonList[index].name}
+            </li>
+          );
+        })}
+      </ul>
     </>
   );
 }
