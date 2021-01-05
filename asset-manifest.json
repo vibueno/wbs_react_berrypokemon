@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/wbs_react_berrypokemon/static/css/main.40b0b347.chunk.css",
-    "main.js": "/wbs_react_berrypokemon/static/js/main.68e3cdec.chunk.js",
-    "main.js.map": "/wbs_react_berrypokemon/static/js/main.68e3cdec.chunk.js.map",
-    "runtime-main.js": "/wbs_react_berrypokemon/static/js/runtime-main.8a75b3be.js",
-    "runtime-main.js.map": "/wbs_react_berrypokemon/static/js/runtime-main.8a75b3be.js.map",
-    "static/js/2.834713ea.chunk.js": "/wbs_react_berrypokemon/static/js/2.834713ea.chunk.js",
-    "static/js/2.834713ea.chunk.js.map": "/wbs_react_berrypokemon/static/js/2.834713ea.chunk.js.map",
-    "static/js/3.01d61f1d.chunk.js": "/wbs_react_berrypokemon/static/js/3.01d61f1d.chunk.js",
-    "static/js/3.01d61f1d.chunk.js.map": "/wbs_react_berrypokemon/static/js/3.01d61f1d.chunk.js.map",
+    "main.css": "/wbs_react_berrypokemon/static/css/main.afcbedcf.chunk.css",
+    "main.js": "/wbs_react_berrypokemon/static/js/main.be5f7f90.chunk.js",
+    "main.js.map": "/wbs_react_berrypokemon/static/js/main.be5f7f90.chunk.js.map",
+    "runtime-main.js": "/wbs_react_berrypokemon/static/js/runtime-main.b66aa05b.js",
+    "runtime-main.js.map": "/wbs_react_berrypokemon/static/js/runtime-main.b66aa05b.js.map",
+    "static/js/2.9a7d4963.chunk.js": "/wbs_react_berrypokemon/static/js/2.9a7d4963.chunk.js",
+    "static/js/2.9a7d4963.chunk.js.map": "/wbs_react_berrypokemon/static/js/2.9a7d4963.chunk.js.map",
+    "static/js/3.911405fc.chunk.js": "/wbs_react_berrypokemon/static/js/3.911405fc.chunk.js",
+    "static/js/3.911405fc.chunk.js.map": "/wbs_react_berrypokemon/static/js/3.911405fc.chunk.js.map",
     "index.html": "/wbs_react_berrypokemon/index.html",
-    "static/css/main.40b0b347.chunk.css.map": "/wbs_react_berrypokemon/static/css/main.40b0b347.chunk.css.map",
-    "static/js/2.834713ea.chunk.js.LICENSE.txt": "/wbs_react_berrypokemon/static/js/2.834713ea.chunk.js.LICENSE.txt"
+    "static/css/main.afcbedcf.chunk.css.map": "/wbs_react_berrypokemon/static/css/main.afcbedcf.chunk.css.map",
+    "static/js/2.9a7d4963.chunk.js.LICENSE.txt": "/wbs_react_berrypokemon/static/js/2.9a7d4963.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.8a75b3be.js",
-    "static/js/2.834713ea.chunk.js",
-    "static/css/main.40b0b347.chunk.css",
-    "static/js/main.68e3cdec.chunk.js"
+    "static/js/runtime-main.b66aa05b.js",
+    "static/js/2.9a7d4963.chunk.js",
+    "static/css/main.afcbedcf.chunk.css",
+    "static/js/main.be5f7f90.chunk.js"
   ]
 }
