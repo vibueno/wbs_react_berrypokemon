@@ -59,10 +59,16 @@ function App() {
       <h1>Welcome to Pokemoon & Berryland!</h1>
       <div className="card-container">
         {berry ? (
-          <Card title={berry.title} id={berry.id} name={berry.name} />
+          <Card
+            key={`cardBerry${berry.id}`}
+            title={berry.title}
+            id={berry.id}
+            name={berry.name}
+          />
         ) : null}
         {berryFirmness ? (
           <Card
+            key={`cardBerryFirmness${berryFirmness.id}`}
             title={berryFirmness.title}
             id={berryFirmness.id}
             name={berryFirmness.name}
@@ -70,6 +76,7 @@ function App() {
         ) : null}
         {berryFlavour ? (
           <Card
+            key={`cardBerryFlavour${berryFlavour.id}`}
             title={berryFlavour.title}
             id={berryFlavour.id}
             name={berryFlavour.name}
@@ -77,10 +84,12 @@ function App() {
         ) : null}
       </div>
 
-      <BerryForm></BerryForm>
+      <BerryForm key="berryForm"></BerryForm>
 
       <h2>Pokemon buddies</h2>
-      {pokemonList ? <PokemonList pokemonList={pokemonList} /> : null}
+      {pokemonList ? (
+        <PokemonList key="pokemonList" pokemonList={pokemonList} />
+      ) : null}
     </>
   );
 }
