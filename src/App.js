@@ -70,15 +70,15 @@ function App() {
     <>
       <h1>Welcome to Pokemoon & Berryland!</h1>
       <div className="card-container">
-        <Card berryInfo={berry}></Card>
-        <Card berryInfo={berryFirmness}></Card>
-        <Card berryInfo={berryFlavour}></Card>
+        <Card berryInfo={berry} />
+        <Card berryInfo={berryFirmness} />
+        <Card berryInfo={berryFlavour} />
       </div>
 
       <BerryForm></BerryForm>
 
       <h2>Pokemon buddies</h2>
-      <PokemonList pokemonList={pokemonList}></PokemonList>
+      <PokemonList pokemonList={pokemonList} />
     </>
   );
 }
