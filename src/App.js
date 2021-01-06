@@ -13,49 +13,43 @@ function App() {
 
   document.title = "Pokemoon & Berryland";
 
+  const apiRequest = (url, title, stateUpdater) => {
+    axios
+      .get(url)
+      .then((response) => {
+        const apiReponse = {
+          title: title,
+          id: response.data.id,
+          name: response.data.name,
+        };
+        stateUpdater(apiReponse);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   useEffect(() => {
-    axios
-      .get("https://pokeapi.co/api/v2/berry/1")
-      .then((response) => {
-        const apiBerry = {
-          category: "berry",
-          id: response.data.id,
-          name: response.data.name,
-        };
-        setBerry(apiBerry);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    apiRequest("https://pokeapi.co/api/v2/berry/1", "berry", setBerry);
+  }, []);
 
-    axios
-      .get("https://pokeapi.co/api/v2/berry-firmness/1")
-      .then((response) => {
-        const apiBerryFirmness = {
-          category: "firmness",
-          id: response.data.id,
-          name: response.data.name,
-        };
-        setBerryFirmness(apiBerryFirmness);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+  useEffect(() => {
+    apiRequest(
+      "https://pokeapi.co/api/v2/berry-firmness/1",
+      "firmness",
+      setBerryFirmness
+    );
+  }, []);
 
-    axios
-      .get("https://pokeapi.co/api/v2/berry-flavor/1")
-      .then((response) => {
-        const apiResponseBerryFlavour = {
-          category: "flavour",
-          id: response.data.id,
-          name: response.data.name,
-        };
-        setBerryFlavour(apiResponseBerryFlavour);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+  useEffect(() => {
+    apiRequest(
+      "https://pokeapi.co/api/v2/berry-flavor/1",
+      "flavour",
+      setBerryFlavour
+    );
+  }, []);
 
+  useEffect(() => {
     axios
       .get(" https://pokeapi.co/api/v2/pokemon")
       .then((response) => {
@@ -70,9 +64,23 @@ function App() {
     <>
       <h1>Welcome to Pokemoon & Berryland!</h1>
       <div className="card-container">
-        {berry ? <Card berryInfo={berry} /> : null}
-        {berryFirmness ? <Card berryInfo={berryFirmness} /> : null}
-        {berryFlavour ? <Card berryInfo={berryFlavour} /> : null}
+        {berry ? (
+          <Card title={berry.title} id={berry.id} name={berry.name} />
+        ) : null}
+        {berryFirmness ? (
+          <Card
+            title={berryFirmness.title}
+            id={berryFirmness.id}
+            name={berryFirmness.name}
+          />
+        ) : null}
+        {berryFlavour ? (
+          <Card
+            title={berryFlavour.title}
+            id={berryFlavour.id}
+            name={berryFlavour.name}
+          />
+        ) : null}
       </div>
 
       <BerryForm></BerryForm>

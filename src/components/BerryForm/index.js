@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import axios from "axios";
 import "./index.css";
 export default function BerryForm() {
-  const [userBerry, setuserBerry] = useState("");
+  const [userBerry, setuserBerry] = useState();
 
   const userBerryForm = useRef(null);
   const userBerryInput = useRef(null);
@@ -36,7 +36,7 @@ export default function BerryForm() {
         <button type="submit">get berry!</button>
       </form>
       <div className="returned-berry">
-        <strong>{userBerry !== "" ? `Your berry: ${userBerry}` : ""}</strong>
+        <strong>{userBerry ? `Your berry: ${userBerry}` : ""}</strong>
       </div>
     </>
   );
