@@ -31,17 +31,11 @@ function App() {
 
   useEffect(() => {
     apiRequest("https://pokeapi.co/api/v2/berry/1", "berry", setBerry);
-  }, []);
-
-  useEffect(() => {
     apiRequest(
       "https://pokeapi.co/api/v2/berry-firmness/1",
       "firmness",
       setBerryFirmness
     );
-  }, []);
-
-  useEffect(() => {
     apiRequest(
       "https://pokeapi.co/api/v2/berry-flavor/1",
       "flavour",
