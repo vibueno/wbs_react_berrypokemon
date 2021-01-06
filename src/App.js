@@ -6,10 +6,10 @@ import BerryForm from "./components/BerryForm";
 import PokemonList from "./components/PokemonList";
 
 function App() {
-  const [berry, setBerry] = useState("");
-  const [berryFirmness, setBerryFirmness] = useState("");
-  const [berryFlavour, setBerryFlavour] = useState("");
-  const [pokemonList, setPokemonList] = useState("");
+  const [berry, setBerry] = useState();
+  const [berryFirmness, setBerryFirmness] = useState();
+  const [berryFlavour, setBerryFlavour] = useState();
+  const [pokemonList, setPokemonList] = useState();
 
   document.title = "Pokemoon & Berryland";
 
@@ -70,15 +70,15 @@ function App() {
     <>
       <h1>Welcome to Pokemoon & Berryland!</h1>
       <div className="card-container">
-        <Card berryInfo={berry} />
-        <Card berryInfo={berryFirmness} />
-        <Card berryInfo={berryFlavour} />
+        {berry ? <Card berryInfo={berry} /> : null}
+        {berryFirmness ? <Card berryInfo={berryFirmness} /> : null}
+        {berryFlavour ? <Card berryInfo={berryFlavour} /> : null}
       </div>
 
       <BerryForm></BerryForm>
 
       <h2>Pokemon buddies</h2>
-      <PokemonList pokemonList={pokemonList} />
+      {pokemonList ? <PokemonList pokemonList={pokemonList} /> : null}
     </>
   );
 }
